@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "placa": "ABCD1234",
+        "puerta_ingreso": "1",
+        "tipo_servicio": "Cochera",
+        "tipo_vehiculo": "Auto",
+        "ingreso": "2023-10-22T00:20:20",
+        "puerta_salida": 7,
+        "salida": "2023-10-22T15:20:20",
+        "ticket_perdido": false,
+        "descarga": false,
+        "tiempo_en_estacionamiento":"P3DT15H30M12S",
+        "total_a_pagar": 16.50
+    },
+    {
+        "id": 2,
+        "placa": "ABCD1235",
+        "puerta_ingreso": "1",
+        "tipo_servicio": "Cochera",
+        "tipo_vehiculo": "Auto",
+        "ingreso": "2023-10-22T00:20:20",
+        "puerta_salida": "",
+        "salida": "",
+        "ticket_perdido": false,
+        "descarga": false,
+        "tiempo_en_estacionamiento": "",
+        "total_a_pagar": 0
+    }
+]
