@@ -9,7 +9,7 @@ const registroSchema = z.object({
     puerta_ingreso: z.string({
         required_error: "La puerta es requerida"
     }),
-    tipo_servicio: z.array(
+    tipo_servicio: z.string(
         z.enum(
             ['Cochera', 'Parking']
         ),
@@ -18,7 +18,7 @@ const registroSchema = z.object({
             required_error: 'El tipo de servicio es requerido'
         }
     ),
-    tipo_vehiculo: z.array(
+    tipo_vehiculo: z.string(
         z.enum(
             [
                 "Moto lineal",
