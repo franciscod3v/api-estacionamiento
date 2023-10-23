@@ -48,5 +48,16 @@ const registroSchema = z.object({
     }),
     puerta_salida: z.string({
         required_error: "La puerta es requerida"
-    })
+    }),
+    salida: z.string(
+        {
+            invalid_type_error: "La fecha y hora de ingreso debe ser un texto",
+            required_error: "La fecha y hora de ingreso es requerida" 
+    }),
+    ticket_perdido: z.boolean(),
+    descarga: z.boolean().default(false),
+    tiempo_en_estacionamiento: z.string({
+        required_error: "La puerta es requerida"
+    }).default(""),
+    total_a_pagar: z.number().default(0)
 })
