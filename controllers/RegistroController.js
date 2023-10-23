@@ -23,6 +23,7 @@ export class RegistroController {
         if (registro) {
             return res.json(registro)
         }
+        res.status(404).json({message: 'No encontramos tu Id'})
     }
 
     static async create(req, res) {

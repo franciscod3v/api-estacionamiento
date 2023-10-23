@@ -16,7 +16,7 @@ export class Registro {
 
     static async getById({ id }) {
         const registro = registrosJSON.find(
-            registro => registro.id === id
+            registro => registro.id.toString() === id.toString()
         )
 
         return registro
@@ -38,7 +38,7 @@ export class Registro {
 
     static async update({ id, input }) {
         //Buscamos id en arreglo
-        const registroId = registrosJSON.findIndex(registro => registro.id === id)
+        const registroId = registrosJSON.findIndex(registro => registro.id.toString() === id.toString())
         //Verificando si se encontró el Id
         if (registroId === -1) {
             return { valor: false, message: 'Registro no encontrado'}
