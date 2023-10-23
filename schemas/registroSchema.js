@@ -61,3 +61,11 @@ const registroSchema = z.object({
     }).default(""),
     total_a_pagar: z.number().default(0)
 })
+
+export function validarRegistro (input) {
+    return registroSchema.safeParse(input)
+}
+
+export function validarParcialmenteRegistro (input) {
+    return registroSchema.partial().safeParse(input)
+}
