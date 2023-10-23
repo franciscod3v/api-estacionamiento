@@ -7,6 +7,17 @@ GET http://localhost:1235/registros?id=1
 ###POST
 POST http://localhost:1235/registros
 Content-Type: application/json
-{
 
+{
+    "placa": "ABCD1236",
+    "puerta_ingreso": "1",
+    "tipo_servicio": "Cochera",
+    "tipo_vehiculo": "Auto",
+    "ingreso": "2023-10-22T00:20:20",
+    "puerta_salida": "",
+    "salida": "",
+    "ticket_perdido": false,
+    "descarga": false,
+    "tiempo_en_estacionamiento": "",
+    "total_a_pagar": 0
 }

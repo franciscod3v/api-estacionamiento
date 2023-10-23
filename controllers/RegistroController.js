@@ -30,11 +30,33 @@ export class RegistroController {
         const result = validarRegistro(req.body)
 
         if (!result.success) {
-            return res.status(400).json({error: JSON.parse(result.error.message)})
+            return res.status(400).json({ error: JSON.parse(result.error.message) })
         }
 
-        const nuevoRegistro = await Registro.create({input: result.data})
+        const nuevoRegistro = await Registro.create({ input: result.data })
 
         res.status(201).json(nuevoRegistro)
+    }
+
+    static async update(req, res) {
+        //Validamos petición
+        const result = validarParcialmenteRegistro(req.body)
+
+        if (!result.success) {
+            res.status(400).json({ error: JSON.parse(result.error.message) })
+        }
+
+        //Guardamos Id
+        const { id } = req.params
+
+        //Modificando el cuerpo del registro de acuerdo al Id
+        const registroActualizado = await Registro.update({ id, input: result.data })
+
+        if (!registroActualizado.valor) {
+            return res.status(404).json(registroActualizado.message)
+        } else {
+            return res.json(registroActualizado.message)
+        }
+
     }
 }
