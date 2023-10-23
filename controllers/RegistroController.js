@@ -10,7 +10,7 @@ export class RegistroController {
         const registrosFiltrados = await Registro.getAll({ placa })
 
         if (registrosFiltrados.length === 0) {
-            res.status(500).json({ message: 'No encontramos registros con esa placa' })
+            res.status(500).json({ message: 'No encontramos registros con la placa ingresada o no hay registros' })
         } else {
             res.json(registrosFiltrados)
         }

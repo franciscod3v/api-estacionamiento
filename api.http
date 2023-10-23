@@ -1,8 +1,11 @@
 ### GET ALL
 GET http://localhost:1235/registros
 
+### GET POR PLACA
+GET http://localhost:1235/registros?placa=ABCD1235
+
 ###GET ID
-GET http://localhost:1235/registros?id=1
+GET http://localhost:1235/registros/1
 
 ###POST
 POST http://localhost:1235/registros
@@ -15,9 +18,22 @@ Content-Type: application/json
     "tipo_vehiculo": "Auto",
     "ingreso": "2023-10-22T00:20:20",
     "puerta_salida": "",
-    "salida": "",
+    "salida": "2023-10-22T15:20:20",
     "ticket_perdido": false,
     "descarga": false,
     "tiempo_en_estacionamiento": "",
     "total_a_pagar": 0
+}
+
+###PATCH
+PATCH http://localhost:1235/registros/3
+Content-Type: application/json
+
+{
+    "puerta_salida": "7",
+    "salida": "2023-10-22T15:20:20",
+    "ticket_perdido": true,
+    "descarga": true,
+    "tiempo_en_estacionamiento": "P3DT15H30M12S",
+    "total_a_pagar": 36.90
 }

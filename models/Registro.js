@@ -24,12 +24,22 @@ export class Registro {
 
     static async create({ input }) {
         //Creando el registro
+        let nuevoRegistro = {}
+
         const cantidadDeRegistros = registrosJSON.length
-        const ultimoId = registrosJSON[cantidadDeRegistros - 1].id
-        const nuevoRegistro = {
-            id: ultimoId + 1,
-            ...input
+        if (cantidadDeRegistros === 0) {
+            nuevoRegistro = {
+                id: 1,
+                ...input
+            }
+        } else {
+            const ultimoId = registrosJSON[cantidadDeRegistros - 1].id
+            nuevoRegistro = {
+                id: ultimoId + 1,
+                ...input
+            }
         }
+
         //Agregando nuevo registro
         registrosJSON.push(nuevoRegistro)
         return nuevoRegistro
@@ -41,7 +51,7 @@ export class Registro {
         const registroId = registrosJSON.findIndex(registro => registro.id.toString() === id.toString())
         //Verificando si se encontró el Id
         if (registroId === -1) {
-            return { valor: false, message: 'Registro no encontrado'}
+            return { valor: false, message: 'Registro no encontrado' }
         }
         //Creando el registro con el Id encontrado
         const registroActualizado = {
@@ -51,7 +61,7 @@ export class Registro {
         //Reemplazamos el registro actualizado por el registro antiguo
         registrosJSON[registroId] = registroActualizado
 
-        return{valor: true, message: 'Registro actualizado'}
+        return { valor: true, message: 'Registro actualizado' }
     }
 
 }
