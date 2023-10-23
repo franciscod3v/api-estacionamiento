@@ -1,0 +1,12 @@
+### GET ALL
+GET http://localhost:1235/registros
+
+###GET ID
+GET http://localhost:1235/registros?id=1
+
+###POST
+POST http://localhost:1235/registros
+Content-Type: application/json
+{
+
+}

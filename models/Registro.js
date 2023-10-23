@@ -1,6 +1,6 @@
 import { readJSON } from '../utils.js'
 
-const registrosJSON = readJSON('../registros.json')
+const registrosJSON = readJSON('./registros.json')
 
 export class Registro {
 

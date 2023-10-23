@@ -1,7 +1,6 @@
 import z from 'zod'
 
 const registroSchema = z.object({
-    id: z.number().int().min(0),
     placa: z.string({
         invalid_type_error: "La placa debe ser un texto",
         required_error: "La placa es requerida"
