@@ -64,4 +64,17 @@ export class Registro {
         return { valor: true, message: 'Registro actualizado' }
     }
 
+    static async delete ({id}) {
+        //Buscamos id
+        const registroId = registrosJSON.findIndex(registro => registro.id.toString() === id.toString())
+
+        if (registroId === -1) {
+            return false
+        }
+
+        registrosJSON.splice(registroId, 1)
+
+        return true
+
+    }
 }
