@@ -60,4 +60,18 @@ export class RegistroController {
         }
 
     }
+
+    static async delete(req, res) {
+        //Capturamos id
+        const { id } = req.params
+
+        const registroId = await Registro.delete({ id })
+
+        //Verificamos si encontraron el Id
+        if (registroId === false) {
+            return res.status(404).json({message: 'Registro no encontrada'})
+        } else {
+            return res.json({message: 'Registro borrado'})
+        }
+    }
 }
