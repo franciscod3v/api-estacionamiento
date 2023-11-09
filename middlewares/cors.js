@@ -6,7 +6,8 @@ export const corsMiddleWare = () => {
             
             const ACCEPTED_ORIGINS = [
                 'http://localhost:1234',
-                'http://127.0.0.1:5500'
+                'http://127.0.0.1:5500',
+                'https://estacionamiento-unicachi.netlify.app'
             ]
 
             if (ACCEPTED_ORIGINS.includes(origin)) {

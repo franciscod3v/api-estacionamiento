@@ -37,3 +37,6 @@ Content-Type: application/json
     "tiempo_en_estacionamiento": "P3DT15H30M12S",
     "total_a_pagar": 36.90
 }
+
+###DELETE
+DELETE http://localhost:1235/registros/3
